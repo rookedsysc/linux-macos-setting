@@ -34,7 +34,6 @@ Plugin 'honza/vim-snippets' " snippets
 Plugin 'valloric/youcompleteme' " youcomplete
 Plugin 'MarcWeber/vim-addon-mw-utils' " vim-addon-mw-utils
 Plugin 'tomtom/tlib_vim' " tlib
-Plugin 'garbas/vim-snipmate' " snimate
 
 " File Manager
 Plugin 'kien/ctrlp.vim' 
