@@ -20,7 +20,7 @@ export PATH="$HOME/.gems/bin:$PATH"
 sudo gem install jekyll-algolia
 sudo gem install jekyll-paginate
 sudo gem install jekyll-sitemap
-sudo gem install jekyll-gist
+sudo gem instlal jekyll-gist
 sudo gem install jekyll-feed
 sudo gem install jekyll-include-cache
 

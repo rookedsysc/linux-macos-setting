@@ -46,14 +46,6 @@ How to start a server
 
 	jekyll serve
 
-If you receive an error to install Gemfile:
-
-	cd [your gitblog local address]
-	bundler
-	sudo gem install jekyll bundler
-	bundle add webrick
-	sudo bundle exec jekyll serve
-
 ![jekyllServe](./imgSrc/jekyllServe.png)
 
 KDE plasma for Kali Linux
