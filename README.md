@@ -56,6 +56,11 @@ If you receive an error to install Gemfile:
 
 ![jekyllServe](./imgSrc/jekyllServe.png)
 
+### algolia
+
+    export ALGOLIA_API_KEY='ADMIN KEY"
+    bundle exec jekyll algolia
+
 KDE plasma for Kali Linux
 -------
 KDE plasma is a kind of Linux theme.
