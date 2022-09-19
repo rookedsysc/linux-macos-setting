@@ -5,6 +5,7 @@ brew update
 brew install curl
 brew install global
 brew install git
+brew install neovim
 
 # git clone 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
