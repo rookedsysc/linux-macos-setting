@@ -55,6 +55,12 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Shougo/unite-outline'
 Plugin 'Shougo/vimproc.vim'
 
+" Dart syntax
+Plugin 'dart-lang/dart-vim-plugin'
+
+" MarkDown Preview
+Plugin 'iamcco/markdown-preview.nvim'
+
 Plugin 'gosukiwi/vim-atom-dark' " Atom Dark Theme
 call vundle#end()
 set t_Co=256
