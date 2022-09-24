@@ -15,6 +15,7 @@ set smartindent
 set showmatch
 set laststatus=2
 set encoding=utf-8
+set fileencodings=utf-8,euc-kr,cp949
 filetype off
 syntax on
 
@@ -65,6 +66,9 @@ Plugin 'gosukiwi/vim-atom-dark' " Atom Dark Theme
 call vundle#end()
 set t_Co=256
 
+" Ycm Setting
+let g:ycm_min_num_of_chars_for_completion = 1
+
 " Key Mapping
 let g:Powerline_symbols='fancy'
 let g:Powerline_cache_enabled = 0
@@ -80,6 +84,7 @@ nnoremap <leader>gd :Unite gtags/def:
 nnoremap <leader>gr :Unite gtags/ref:
 nnoremap <leader>gg :Unite grep<CR>
 nnoremap <silent><leader>gc :Unite gtags/context<CR>
+nnoremap <leader>df :DartFmt<cr>
 
 " Last Edit Point
 autocmd BufReadPost *
