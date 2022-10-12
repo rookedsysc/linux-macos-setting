@@ -7,6 +7,7 @@ brew install global
 brew install git
 brew install neovim
 brew install hammerspoon --cask
+brew install ffmpeg
 
 # git clone 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
