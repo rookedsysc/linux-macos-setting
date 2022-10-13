@@ -27,7 +27,7 @@ git clone https://github.com/rookedsysc/Linux_MacOS_Setting
 cd ./Linux_MacOS_Setting
 export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/bin"
-cp .zshrc ~/.zshrc
+cp zshrc.mac ~/.zshrc
 cp .vimrc ~/.vimrc
 # if dont install zsh-autosuggetions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
