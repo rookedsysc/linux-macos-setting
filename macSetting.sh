@@ -8,6 +8,7 @@ brew install git
 brew install neovim
 brew install hammerspoon --cask
 brew install ffmpeg
+brew install neovim
 
 # git clone 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -29,9 +30,12 @@ export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/bin"
 cp zshrc.mac ~/.zshrc
 cp .vimrc ~/.vimrc
-# if dont install zsh-autosuggetions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+mkdir ~/.config/nvim/
+cp ~/.vimrc ~/.config/nvim
 source ~/.zshrc
 
 # VIM Setting
 vim +PluginInstall +qall
+
+# if dont install zsh-autosuggetions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
