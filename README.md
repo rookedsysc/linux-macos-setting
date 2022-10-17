@@ -30,8 +30,8 @@ If this error message is printed,
 	git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 	source ~/.zshrc
 
-Jekkyll 
-------
+### Jekkyll 
+
 Install in Ubuntu
 
 	wget https://raw.githubusercontent.com/rookedsysc/Linux_MacOS_Setting/master/jekyllSetting.sh
@@ -56,7 +56,7 @@ If you receive an error to install Gemfile:
 
 ![jekyllServe](./imgSrc/jekyllServe.png)
 
-### algolia
+#### algolia
 
     export ALGOLIA_API_KEY='ADMIN KEY"
     bundle exec jekyll algolia
