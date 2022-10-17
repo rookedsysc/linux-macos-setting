@@ -60,6 +60,16 @@ If you receive an error to install Gemfile:
 
     export ALGOLIA_API_KEY='ADMIN KEY"
     bundle exec jekyll algolia
+    
+### mkdocs 
+
+```console 
+pip3 install mkdocs
+pip3 install mkdocs-material
+mkdocs serve --dev-addr 0.0.0.0:8080
+```
+
+It's working in mac
 
 KDE plasma for Kali Linux
 -------
