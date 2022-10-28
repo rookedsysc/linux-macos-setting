@@ -12,7 +12,7 @@ brew install neovim
 
 
 
-# code server
+#code server
 #brew install git-lfs
 ## After Node -v 16.16 install 
 #sudo npm install -g yarn
