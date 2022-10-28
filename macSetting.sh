@@ -10,6 +10,18 @@ brew install hammerspoon --cask
 brew install ffmpeg
 brew install neovim
 
+
+
+# code server
+#brew install git-lfs
+## After Node -v 16.16 install 
+#sudo npm install -g yarn
+#sudo npm install -g nfpm
+#brew install jq
+#brew install gnupg
+#brew install quilt bats
+#sudo npm install -g bats
+
 # git clone 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 git clone https://github.com/rookedsysc/Linux_MacOS_Setting
