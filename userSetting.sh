@@ -26,7 +26,6 @@ git clone https://github.com/rookedsysc/Linux_MacOS_Setting
 cd ./Linux_MacOS_Setting
 export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/bin"
-cp .zshrc ~/.zshrc
 cp .vimrc ~/.vimrc
 # if dont install zsh-autosuggetions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -75,3 +74,6 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt "$ZSH_CUSTOM/them
 ln -s "$ZSH_CUSTOM/themes/spaceship/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 git clone https://github.com/sindresorhus/pure "$ZSH_CUSTOM/themes/pure"
 ln -s "$ZSH_CUSTOM/themes/pure/pure.zsh-theme" "$ZSH_CUSTOM/themes/pure.zsh-theme"
+
+cp .zshrc ~/.zshrc
+source ~/.zshrc
