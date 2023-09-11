@@ -63,7 +63,7 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'iamcco/markdown-preview.nvim'
 
 " WakaTime
-Plugin 'wakatime/vim-wakatime'" >> ~/.vimrc && vim
+" Plugin 'wakatime/vim-wakatime'" >> ~/.vimrc && vim
 
 Plugin 'gosukiwi/vim-atom-dark' " Atom Dark Theme
 call vundle#end()
