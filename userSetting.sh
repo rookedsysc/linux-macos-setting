@@ -73,3 +73,5 @@ which powerline
 # ZSH Theme 
 git clone https://github.com/spaceship-prompt/spaceship-prompt "$ZSH_CUSTOM/themes/spaceship"
 ln -s "$ZSH_CUSTOM/themes/spaceship/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+git clone https://github.com/sindresorhus/pure "$ZSH_CUSTOM/themes/pure"
+ln -s "$ZSH_CUSTOM/themes/pure/pure.zsh-theme" "$ZSH_CUSTOM/themes/pure.zsh-theme"
