@@ -69,3 +69,7 @@ echo "[!] Zsh Setting"
 echo $SHELL
 echo "[!] Power Line Setting"
 which powerline
+
+# ZSH Theme 
+git clone https://github.com/spaceship-prompt/spaceship-prompt "$ZSH_CUSTOM/themes/spaceship"
+ln -s "$ZSH_CUSTOM/themes/spaceship/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
