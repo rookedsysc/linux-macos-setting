@@ -13,6 +13,11 @@ sudo apt-get -y install service
 sudo apt-get install -y git
 sudo apt-get install -y ruby
 
+# ssh setting
+sudo apt-get install -y openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh
+
 # ZSH Setting
 chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -39,6 +44,7 @@ sudo apt-get install vim-runtime -y
 # update end
 sudo apt-get install build-essential cmake python-dev silversearcher-ag -y
 wget http://tamacom.com/global/global-6.3.3.tar.gz
+tar -xvf global-6.3.3.tar.gz
 cd global-6.3.3
 ./configure && make
 make install && cd

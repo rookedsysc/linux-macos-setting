@@ -21,6 +21,10 @@ sudo apt install build-essential -y
 sudo apt-get install -y ruby
 sudo apt-get install -y make
 
+# ssh setting
+sudo apt install openssh-server
+sudo systemctl enable ssh
+
 # zsh plugins
 sudo apt-get install -y zsh-syntax-highlighting 
 sudo apt-get install -y zsh-autosuggestions
