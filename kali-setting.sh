@@ -21,12 +21,9 @@ sudo apt install build-essential -y
 sudo apt-get install -y ruby
 sudo apt-get install -y make
 
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-# zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+# zsh plugins
+sudo apt-get install -y zsh-syntax-highlighting 
+sudo apt-get install -y zsh-autosuggestions
 
 
 # VIM Setting
