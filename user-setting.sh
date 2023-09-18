@@ -81,5 +81,5 @@ ln -s "$ZSH_CUSTOM/themes/spaceship/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spa
 git clone https://github.com/sindresorhus/pure "$ZSH_CUSTOM/themes/pure"
 ln -s "$ZSH_CUSTOM/themes/pure/pure.zsh-theme" "$ZSH_CUSTOM/themes/pure.zsh-theme"
 
-cp .zshrc ~/.zshrc
+cp Linux_MacOS_Setting/.zshrc ~/.zshrc
 source ~/.zshrc
