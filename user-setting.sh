@@ -20,7 +20,7 @@ sudo systemctl start ssh
 
 # ZSH Setting
 chsh -s /bin/zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+nohup sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &
 # zsh-syntax-highlighting
 sudo apt-get install -y zsh-syntax-highlighting
 sudo apt-get install -y zsh-autosuggestions
