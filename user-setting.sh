@@ -28,6 +28,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 git clone https://github.com/rookedsysc/Linux_MacOS_Setting 
 cd ./Linux_MacOS_Setting
+cp .zshrc ~/.zshrc
 export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/bin"
 cp .vimrc ~/.vimrc
@@ -80,5 +81,4 @@ ln -s "$ZSH_CUSTOM/themes/spaceship/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spa
 git clone https://github.com/sindresorhus/pure "$ZSH_CUSTOM/themes/pure"
 ln -s "$ZSH_CUSTOM/themes/pure/pure.zsh-theme" "$ZSH_CUSTOM/themes/pure.zsh-theme"
 
-cp Linux_MacOS_Setting/.zshrc ~/.zshrc
 source ~/.zshrc
