@@ -22,8 +22,8 @@ sudo systemctl start ssh
 chsh -s /bin/zsh
 nohup sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &
 # zsh-syntax-highlighting
-sudo apt-get install -y zsh-syntax-highlighting
-sudo apt-get install -y zsh-autosuggestions
+sudo apt install -y zsh-syntax-highlighting
+sudo apt install -y zsh-autosuggestions
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 git clone https://github.com/rookedsysc/Linux_MacOS_Setting 
