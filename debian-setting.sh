@@ -19,15 +19,15 @@ apt-get -y install ruby
 # apt-get install fonts-nanum* -y
 
 # SSH Setting 
-apt-get install service -y
-apt-get install ssh -y
-service ssh restart
-service ssh status
-update-rc.d -f ssh enable 2 3 4 5
+# apt-get install service -y
+# apt-get install ssh -y
+# service ssh restart
+# service ssh status
+# update-rc.d -f ssh enable 2 3 4 5
 
 # ZSH Setting
 chsh -s /bin/zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && exit
 # zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # zsh-autosuggestions
