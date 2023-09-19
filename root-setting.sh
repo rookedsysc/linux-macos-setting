@@ -37,6 +37,7 @@ git clone https://github.com/rookedsysc/Linux_MacOS_Setting
 cd ./Linux_MacOS_Setting
 export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/bin"
+cp .zshrc ~/.zshrc
 cp .vimrc ~/.vimrc
 
 # VIM Setting
@@ -82,5 +83,4 @@ mkdir ~/.oh-my-zsh/themes/spaceship
 git clone https://github.com/spaceship-prompt/spaceship-prompt ~/.oh-my-zsh/themes/spaceship
 ln -s ~/.oh-my-zsh/themes/spaceship/spaceship.zsh-theme ~/.oh-my-zsh/themes/spaceship.zsh-theme
 
-cp Linux_MacOS_Setting/.zshrc ~/.zshrc
 source ~/.zshrc
