@@ -14,9 +14,9 @@ apt-get -y install git
 apt-get -y install ruby
 
 # Korean Setting
-apt-get install fcitx-hangul -y
-apt-get install fcitx-lib* -y
-apt-get install fonts-nanum* -y
+# apt-get install fcitx-hangul -y
+# apt-get install fcitx-lib* -y
+# apt-get install fonts-nanum* -y
 
 # SSH Setting 
 apt-get install service -y
