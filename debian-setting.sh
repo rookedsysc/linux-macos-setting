@@ -27,11 +27,8 @@ apt-get -y install ruby
 
 # ZSH Setting
 chsh -s /bin/zsh
-nohup sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &
-# zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-# zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+nohup sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting &
+
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf 
 ~/.fzf/install
 git clone https://github.com/rookedsysc/Linux_MacOS_Setting 
@@ -39,8 +36,6 @@ cd ./Linux_MacOS_Setting
 export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/bin"
 cp .vimrc ~/.vimrc
-# if dont install zsh-autosuggetions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # VIM Setting
 # update Aug 16 21:00 / cuz ubuntu error
