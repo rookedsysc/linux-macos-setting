@@ -12,8 +12,6 @@ apt-get install wget curl
 apt-get -y install service
 apt-get -y install git
 apt-get -y install ruby
-
-# Korean Setting
 # apt-get install fcitx-hangul -y
 # apt-get install fcitx-lib* -y
 # apt-get install fonts-nanum* -y
@@ -27,14 +25,14 @@ apt-get -y install ruby
 
 # ZSH Setting
 chsh -s /bin/zsh
-nohup sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &
-apt-get install -y zsh-syntax-highlighting
-apt-get install -y zsh-autosuggestions
-
+nohup \
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&  \
+	apt-get install -y zsh-syntax-highlighting && \
+	apt-get install -y zsh-autosuggestions &
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf 
 ~/.fzf/install
-git clone https://github.com/rookedsysc/Linux_MacOS_Setting 
-cd ./Linux_MacOS_Setting
+git clone https://github.com/rookedsysc/Linux_MacOS_Setting ~
+cd ~/Linux_MacOS_Setting
 export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/bin"
 cp .zshrc ~/.zshrc
