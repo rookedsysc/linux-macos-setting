@@ -119,6 +119,7 @@ export PATH
 
 # mac iterm에서 option + 방향키 동작 안함
 # 참조 https://edykim.com/ko/post/setting-opt-direction-keys-when-using-zsh-in-iterm/
+bindkey -e
 bindkey "[D" backward-word
 bindkey "[C" forward-word
 
