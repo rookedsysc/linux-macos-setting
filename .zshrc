@@ -111,3 +111,9 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# terminal에서 option + 방향키 동작 안함
+# 참조 https://edykim.com/ko/post/setting-opt-direction-keys-when-using-zsh-in-iterm/
+bindkey -e
+bindkey "[D" backward-word
+bindkey "[C" forward-word
