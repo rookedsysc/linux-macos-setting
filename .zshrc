@@ -117,3 +117,7 @@ export LC_ALL=en_US.UTF-8
 bindkey -e
 bindkey "[D" backward-word
 bindkey "[C" forward-word
+
+# 파이썬 설정
+alias python=python3
+alias pip=pip3
