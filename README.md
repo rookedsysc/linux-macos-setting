@@ -4,13 +4,6 @@ That is my Linux(Ubuntu, Kali) and Mac OS setting.
 
 Install
 -------
-In Linux
-
-	su root
-	wget https://raw.githubusercontent.com/rookedsysc/Linux_MacOS_Setting/master/debianSetting.sh
-	sh debianSetting.sh
-
-> When zsh shell is activated, enter "exit" to continue the next installation.
 				
 In Mac OS 
 	
@@ -19,7 +12,7 @@ In Mac OS
 
 Setting for Users 
 
-	wget https://raw.githubusercontent.com/rookedsysc/Linux_MacOS_Setting/master/userSetting.sh
+    https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/user-setting.sh
 	sh userSetting.sh
 
 > When zsh shell is activated, enter "exit" to continue the next installation.
@@ -29,6 +22,12 @@ If this error message is printed,
 
 	git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 	source ~/.zshrc
+
+In root
+
+	su root
+    https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/root-setting.sh
+	sh root-setting.sh
 
 ### Jekkyll 
 
