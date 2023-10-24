@@ -12,8 +12,8 @@ In Mac OS
 
 Setting for Users 
 
-    https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/user-setting.sh
-	sh userSetting.sh
+    wget https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/user-setting.sh
+	sh user-setting.sh
 
 > When zsh shell is activated, enter "exit" to continue the next installation.
 
