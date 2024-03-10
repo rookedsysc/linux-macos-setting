@@ -7,13 +7,13 @@ Install
 				
 In Mac OS 
 	
-	wget https://raw.githubusercontent.com/rookedsysc/Linux_MacOS_Setting/master/macSetting.sh 
+	wget https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/mac-setting.sh
 	sh macSetting.sh
 
 Setting for Users 
 
     wget https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/user-setting.sh
-	sh user-setting.sh
+    sh user-setting.sh
 
 > When zsh shell is activated, enter "exit" to continue the next installation.
 
@@ -26,7 +26,7 @@ If this error message is printed,
 In root
 
 	su root
-    https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/root-setting.sh
+        wget https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/root-setting.sh
 	sh root-setting.sh
 
 ### Jekkyll 
