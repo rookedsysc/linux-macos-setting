@@ -1,7 +1,33 @@
--- key mapping for vim 
--- Convert input soruce as English and sends 'escape' if inputSource is not English.
--- Sends 'escape' if inputSource is English.
--- key bindding reference --> https://www.hammerspoon.org/docs/hs.hotkey.html
+-- 모든 디스플레이에서 Space 전환을 시뮬레이션
+function switchSpaceAllDisplays(direction)
+    -- direction: "left" or "right"
+    local key = direction == "right" and "Right" or "Left"
+
+    -- 현재 마우스 포인터 위치 저장
+    local mousePoint = hs.mouse.absolutePosition()
+
+    -- 연결된 디스플레이 목록 가져오기
+    local screens = hs.screen.allScreens()
+
+    -- 각 스크린의 중앙 좌표를 구해서 해당 위치로 마우스를 옮기고 전환 키 입력
+    for i, screen in ipairs(screens) do
+        local frame = screen:frame()
+        local center = hs.geometry.rectMidPoint(frame)
+
+        hs.mouse.absolutePosition(center)
+        hs.timer.usleep(100000) -- 0.1초 (100,000 마이크로초)
+        -- fn 추가해야 함 ref : https://github.com/Hammerspoon/hammerspoon/issues/1946#issuecomment-449604954
+        hs.eventtap.keyStroke({"fn", "ctrl"}, key, 0)
+        hs.timer.usleep(50000) -- 0.05초 (50,000 마이크로초)
+    end
+
+    -- 마우스 원위치
+    hs.mouse.absolutePosition(mousePoint)
+    -- 이벤트 성공여부 알림
+    -- hs.alert.show("Space 이동: " .. direction)
+end
+
+
 -- key mapping for vim 
 -- Convert input soruce as English and sends 'escape' if inputSource is not English.
 -- Sends 'escape' if inputSource is English.
@@ -38,3 +64,10 @@ local remapper = FRemap.new()
 remapper:remap('rcmd', 'f18')
 remapper:register()
 -- END
+
+hs.hotkey.bind({"ctrl", "cmd", "shift"}, "right", function()
+    switchSpaceAllDisplays("right")
+end)
+hs.hotkey.bind({"ctrl", "cmd", "shift"}, "left", function()
+    switchSpaceAllDisplays("left")
+end)
