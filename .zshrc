@@ -121,3 +121,6 @@ bindkey "[C" forward-word
 # 파이썬 설정
 alias python=python3
 alias pip=pip3
+
+# Rust Cargo 환경 설정
+source "$HOME/.cargo/env"
