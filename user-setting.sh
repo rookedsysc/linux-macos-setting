@@ -12,6 +12,8 @@ sudo apt-get -y install wget curl
 sudo apt-get -y install service
 sudo apt-get install -y git
 sudo apt-get install -y ruby
+# Cargo / Rust Install 
+curl https://sh.rustup.rs -sSf | sh
 
 # ssh setting
 sudo apt-get install -y openssh-server
@@ -40,6 +42,10 @@ wget https://github.com/Loakaltog/powerline/raw/develop/font/10-powerline-symbol
 mv PowerlineSymbols.otf /usr/share/fonts
 fc-cache -vf
 mv 10-powerline-symbols.conf /etc/fonts/conf.d
+
+# Utils
+# Zellij
+cargo install --locked zellij
 
 # Setting Check
 echo ""
