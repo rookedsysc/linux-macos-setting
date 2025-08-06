@@ -28,6 +28,32 @@ In root
         wget https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/root-setting.sh
     sh root-setting.sh
 
+## Claude Code & SuperClaude 설치
+
+### 사전 요구사항
+
+- Node.js와 npm 설치 필요
+- Git 설치 필요
+- Python 3.7+ 설치 필요
+- 인터넷 연결
+
+### 설치 방법 
+
+리눅스 시스템용 자동 설치 스크립트 사용:
+
+    wget https://raw.githubusercontent.com/rookedsysc/linux-macos-setting/master/linux-claude-installer.sh
+    chmod +x linux-claude-installer.sh
+    ./linux-claude-installer.sh
+
+설치 프로그램이 다음을 수행합니다:
+1. npm을 통해 Claude Code를 전역 설치
+2. uv 설치 (SuperClaude에 필요한 Python 패키지 매니저)
+3. SuperClaude Framework 저장소 클론
+4. Python 가상환경 설정
+5. SuperClaude 패키지 설치
+6. SuperClaude 설치 설정 실행
+
+
 ## Docs
 
 - [AeroSpace](./docs/how-to-use-aerospace.md)
