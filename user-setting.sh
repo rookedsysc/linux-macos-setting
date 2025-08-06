@@ -33,24 +33,6 @@ export PATH="$PATH:/bin"
 cp .vimrc ~/.vimrc
 source ~/.zshrc
 
-# VIM Setting
-# update Aug 16 21:00 / cuz ubuntu error
-sudo apt-get install vim
-sudo apt-get install vim-gui-common -y
-sudo apt-get install vim-runtime -y
-# update end
-sudo apt-get install build-essential cmake python-dev silversearcher-ag -y
-wget http://tamacom.com/global/global-6.3.3.tar.gz
-tar -xvf global-6.3.3.tar.gz
-cd global-6.3.3
-./configure && make
-make install && cd
-cd ../
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim +PluginInstall +qall
-cd ~/.vim/bundle/vimproc.vim
-make
-
 # Power Line Setting
 sudo pip install git+git://github.com/Lokaltog/powerline
 wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
