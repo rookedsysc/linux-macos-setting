@@ -1,271 +1,271 @@
-# Zellij Configuration Guide
+# Zellij 설정 가이드
 
-This directory contains custom Zellij configuration with optimized keybindings for efficient terminal multiplexing.
+이 디렉토리는 효율적인 터미널 다중화를 위해 최적화된 키 바인딩이 포함된 사용자 정의 Zellij 설정을 포함하고 있습니다.
 
-## Quick Start
+## 빠른 시작
 
 ```bash
-# Start Zellij with this configuration
+# 이 설정으로 Zellij 시작
 zellij --config-dir /path/to/this/directory
 
-# Or copy config.kdl to ~/.config/zellij/
+# 또는 config.kdl을 ~/.config/zellij/로 복사
 cp config.kdl ~/.config/zellij/config.kdl
 ```
 
-## Mode System
+## 모드 시스템
 
-Zellij operates in different modes, each with specific keybindings:
+Zellij는 각각 특정 키 바인딩을 가진 다양한 모드에서 작동합니다:
 
-- **Normal**: Default mode for regular terminal usage
-- **Locked**: Keybindings disabled, all input goes to terminal
-- **Pane**: Pane management and navigation
-- **Tab**: Tab management and navigation
-- **Resize**: Pane resizing operations
-- **Move**: Moving panes around
-- **Scroll**: Scrolling through pane history
-- **Search**: Searching in scroll buffer
-- **Session**: Session management operations
-- **Tmux**: Tmux-compatible keybindings
+- **Normal**: 일반 터미널 사용을 위한 기본 모드
+- **Locked**: 키 바인딩 비활성화, 모든 입력이 터미널로 전달
+- **Pane**: 창 관리 및 탐색
+- **Tab**: 탭 관리 및 탐색
+- **Resize**: 창 크기 조정 작업
+- **Move**: 창 이동
+- **Scroll**: 창 히스토리 스크롤
+- **Search**: 스크롤 버퍼에서 검색
+- **Session**: 세션 관리 작업
+- **Tmux**: Tmux 호환 키 바인딩
 
-## Essential Keybindings
+## 필수 키 바인딩
 
-### Mode Switching (Available in most modes)
-| Key | Action | Description |
+### 모드 전환 (대부분의 모드에서 사용 가능)
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `Ctrl g` | Lock/Unlock | Toggle locked mode |
-| `Ctrl p` | Pane Mode | Enter pane management mode |
-| `Ctrl t` | Tab Mode | Enter tab management mode |
-| `Ctrl n` | Resize Mode | Enter pane resize mode |
-| `Ctrl h` | Move Mode | Enter pane move mode |
-| `Ctrl s` | Scroll Mode | Enter scroll/history mode |
-| `Ctrl o` | Session Mode | Enter session management |
-| `Ctrl b` | Tmux Mode | Enter tmux-compatible mode |
-| `Ctrl q` | Quit | Exit Zellij |
+| `Ctrl g` | 잠금/잠금 해제 | 잠금 모드 토글 |
+| `Ctrl p` | 창 모드 | 창 관리 모드 진입 |
+| `Ctrl t` | 탭 모드 | 탭 관리 모드 진입 |
+| `Ctrl n` | 크기 조정 모드 | 창 크기 조정 모드 진입 |
+| `Ctrl h` | 이동 모드 | 창 이동 모드 진입 |
+| `Ctrl s` | 스크롤 모드 | 스크롤/히스토리 모드 진입 |
+| `Ctrl o` | 세션 모드 | 세션 관리 진입 |
+| `Ctrl b` | Tmux 모드 | Tmux 호환 모드 진입 |
+| `Ctrl q` | 종료 | Zellij 종료 |
 
-## Pane Management (Ctrl p)
+## 창 관리 (Ctrl p)
 
-### Navigation
-| Key | Action | Description |
+### 탐색
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `h` / `left` | Move Left | Focus left pane |
-| `j` / `down` | Move Down | Focus down pane |
-| `k` / `up` | Move Up | Focus up pane |
-| `l` / `right` | Move Right | Focus right pane |
-| `p` | Switch Focus | Toggle between panes |
+| `h` / `left` | 왼쪽 이동 | 왼쪽 창으로 포커스 |
+| `j` / `down` | 아래 이동 | 아래 창으로 포커스 |
+| `k` / `up` | 위 이동 | 위 창으로 포커스 |
+| `l` / `right` | 오른쪽 이동 | 오른쪽 창으로 포커스 |
+| `p` | 포커스 전환 | 창 간 토글 |
 
-### Creation
-| Key | Action | Description |
+### 생성
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `n` | New Pane | Create new pane |
-| `d` | New Down | Create pane below |
-| `r` | New Right | Create pane to the right |
-| `s` | New Stacked | Create stacked pane |
+| `n` | 새 창 | 새 창 생성 |
+| `d` | 아래 새 창 | 아래에 창 생성 |
+| `r` | 오른쪽 새 창 | 오른쪽에 창 생성 |
+| `s` | 스택 창 | 스택 창 생성 |
 
-### Management
-| Key | Action | Description |
+### 관리
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `x` | Close Pane | Close focused pane |
-| `f` | Fullscreen | Toggle pane fullscreen |
-| `z` | Toggle Frames | Show/hide pane frames |
-| `w` | Floating | Toggle floating panes |
-| `e` | Embed/Float | Toggle pane embed/float |
-| `c` | Rename | Rename current pane |
-| `i` | Pin/Unpin | Toggle pane pinned state |
+| `x` | 창 닫기 | 포커스된 창 닫기 |
+| `f` | 전체 화면 | 창 전체 화면 토글 |
+| `z` | 프레임 토글 | 창 프레임 표시/숨기기 |
+| `w` | 플로팅 | 플로팅 창 토글 |
+| `e` | 임베드/플로트 | 창 임베드/플로트 토글 |
+| `c` | 이름 변경 | 현재 창 이름 변경 |
+| `i` | 고정/고정 해제 | 창 고정 상태 토글 |
 
-## Tab Management (Ctrl t)
+## 탭 관리 (Ctrl t)
 
-### Navigation
-| Key | Action | Description |
+### 탐색
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `h` / `left` | Previous Tab | Go to previous tab |
-| `l` / `right` | Next Tab | Go to next tab |
-| `j` / `down` | Next Tab | Go to next tab |
-| `k` / `up` | Previous Tab | Go to previous tab |
-| `1-9` | Go to Tab | Go to specific tab number |
-| `tab` | Toggle Tab | Switch to last active tab |
+| `h` / `left` | 이전 탭 | 이전 탭으로 이동 |
+| `l` / `right` | 다음 탭 | 다음 탭으로 이동 |
+| `j` / `down` | 다음 탭 | 다음 탭으로 이동 |
+| `k` / `up` | 이전 탭 | 이전 탭으로 이동 |
+| `1-9` | 탭으로 이동 | 특정 번호의 탭으로 이동 |
+| `tab` | 탭 토글 | 마지막 활성 탭으로 전환 |
 
-### Management
-| Key | Action | Description |
+### 관리
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `n` | New Tab | Create new tab |
-| `x` | Close Tab | Close current tab |
-| `r` | Rename Tab | Rename current tab |
-| `s` | Sync Toggle | Toggle tab sync mode |
+| `n` | 새 탭 | 새 탭 생성 |
+| `x` | 탭 닫기 | 현재 탭 닫기 |
+| `r` | 탭 이름 변경 | 현재 탭 이름 변경 |
+| `s` | 동기화 토글 | 탭 동기화 모드 토글 |
 
-### Pane Breaking
-| Key | Action | Description |
+### 창 분리
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `b` | Break Pane | Move pane to new tab |
-| `[` | Break Left | Break pane to left |
-| `]` | Break Right | Break pane to right |
+| `b` | 창 분리 | 창을 새 탭으로 이동 |
+| `[` | 왼쪽으로 분리 | 창을 왼쪽으로 분리 |
+| `]` | 오른쪽으로 분리 | 창을 오른쪽으로 분리 |
 
-## Resize Mode (Ctrl n)
+## 크기 조정 모드 (Ctrl n)
 
-### Basic Resize
-| Key | Action | Description |
+### 기본 크기 조정
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `h` / `left` | Increase Left | Expand pane leftward |
-| `j` / `down` | Increase Down | Expand pane downward |
-| `k` / `up` | Increase Up | Expand pane upward |
-| `l` / `right` | Increase Right | Expand pane rightward |
-| `+` / `=` | Increase | General size increase |
-| `-` | Decrease | General size decrease |
+| `h` / `left` | 왼쪽 확대 | 창을 왼쪽으로 확장 |
+| `j` / `down` | 아래 확대 | 창을 아래로 확장 |
+| `k` / `up` | 위 확대 | 창을 위로 확장 |
+| `l` / `right` | 오른쪽 확대 | 창을 오른쪽으로 확장 |
+| `+` / `=` | 확대 | 일반 크기 증가 |
+| `-` | 축소 | 일반 크기 감소 |
 
-### Fine Control
-| Key | Action | Description |
+### 세밀한 제어
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `H` | Decrease Left | Shrink from left |
-| `J` | Decrease Down | Shrink from bottom |
-| `K` | Decrease Up | Shrink from top |
-| `L` | Decrease Right | Shrink from right |
+| `H` | 왼쪽 축소 | 왼쪽에서 축소 |
+| `J` | 아래 축소 | 아래에서 축소 |
+| `K` | 위 축소 | 위에서 축소 |
+| `L` | 오른쪽 축소 | 오른쪽에서 축소 |
 
-## Move Mode (Ctrl h)
+## 이동 모드 (Ctrl h)
 
-| Key | Action | Description |
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `h` / `left` | Move Left | Move pane left |
-| `j` / `down` | Move Down | Move pane down |
-| `k` / `up` | Move Up | Move pane up |
-| `l` / `right` | Move Right | Move pane right |
-| `n` | Move Forward | Move pane forward |
-| `p` | Move Back | Move pane backward |
-| `tab` | Move | Move pane to next position |
+| `h` / `left` | 왼쪽 이동 | 창을 왼쪽으로 이동 |
+| `j` / `down` | 아래 이동 | 창을 아래로 이동 |
+| `k` / `up` | 위 이동 | 창을 위로 이동 |
+| `l` / `right` | 오른쪽 이동 | 창을 오른쪽으로 이동 |
+| `n` | 앞으로 이동 | 창을 앞으로 이동 |
+| `p` | 뒤로 이동 | 창을 뒤로 이동 |
+| `tab` | 이동 | 창을 다음 위치로 이동 |
 
-## Scroll Mode (Ctrl s)
+## 스크롤 모드 (Ctrl s)
 
-### Navigation
-| Key | Action | Description |
+### 탐색
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `j` / `down` | Scroll Down | Scroll down one line |
-| `k` / `up` | Scroll Up | Scroll up one line |
-| `h` / `left` | Page Up | Scroll up one page |
-| `l` / `right` | Page Down | Scroll down one page |
-| `Ctrl f` | Page Down | Fast page down |
-| `Ctrl b` | Page Up | Fast page up |
-| `d` | Half Page Down | Scroll half page down |
-| `u` | Half Page Up | Scroll half page up |
+| `j` / `down` | 아래로 스크롤 | 한 줄 아래로 스크롤 |
+| `k` / `up` | 위로 스크롤 | 한 줄 위로 스크롤 |
+| `h` / `left` | 페이지 업 | 한 페이지 위로 스크롤 |
+| `l` / `right` | 페이지 다운 | 한 페이지 아래로 스크롤 |
+| `Ctrl f` | 페이지 다운 | 빠른 페이지 다운 |
+| `Ctrl b` | 페이지 업 | 빠른 페이지 업 |
+| `d` | 반 페이지 다운 | 반 페이지 아래로 스크롤 |
+| `u` | 반 페이지 업 | 반 페이지 위로 스크롤 |
 
-### Search & Edit
-| Key | Action | Description |
+### 검색 및 편집
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `s` | Search | Enter search mode |
-| `e` | Edit | Edit scrollback in editor |
-| `Ctrl c` | Exit | Return to normal mode |
+| `s` | 검색 | 검색 모드 진입 |
+| `e` | 편집 | 에디터에서 스크롤백 편집 |
+| `Ctrl c` | 종료 | 일반 모드로 복귀 |
 
-## Search Mode
+## 검색 모드
 
-| Key | Action | Description |
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `n` | Next | Find next occurrence |
-| `p` | Previous | Find previous occurrence |
-| `c` | Case Toggle | Toggle case sensitivity |
-| `w` | Word Toggle | Toggle whole word search |
-| `o` | Wrap Toggle | Toggle search wrap |
+| `n` | 다음 | 다음 항목 찾기 |
+| `p` | 이전 | 이전 항목 찾기 |
+| `c` | 대소문자 토글 | 대소문자 구분 토글 |
+| `w` | 단어 토글 | 전체 단어 검색 토글 |
+| `o` | 순환 토글 | 검색 순환 토글 |
 
-## Session Mode (Ctrl o)
+## 세션 모드 (Ctrl o)
 
-| Key | Action | Description |
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `d` | Detach | Detach from session |
-| `w` | Session Manager | Launch session manager |
-| `p` | Plugin Manager | Launch plugin manager |
-| `c` | Configuration | Open configuration |
-| `s` | Share Session | Share session options |
-| `a` | About | Show about dialog |
+| `d` | 분리 | 세션에서 분리 |
+| `w` | 세션 관리자 | 세션 관리자 실행 |
+| `p` | 플러그인 관리자 | 플러그인 관리자 실행 |
+| `c` | 설정 | 설정 열기 |
+| `s` | 세션 공유 | 세션 공유 옵션 |
+| `a` | 정보 | 정보 대화상자 표시 |
 
-## Global Shortcuts (Alt combinations)
+## 전역 단축키 (Alt 조합)
 
-These work in most modes:
+대부분의 모드에서 작동합니다:
 
-### Navigation
-| Key | Action | Description |
+### 탐색
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `Alt h` | Focus/Tab Left | Move focus or tab left |
-| `Alt j` | Focus Down | Move focus down |
-| `Alt k` | Focus Up | Move focus up |
-| `Alt l` | Focus/Tab Right | Move focus or tab right |
+| `Alt h` | 포커스/탭 왼쪽 | 포커스나 탭을 왼쪽으로 이동 |
+| `Alt j` | 포커스 아래 | 포커스를 아래로 이동 |
+| `Alt k` | 포커스 위 | 포커스를 위로 이동 |
+| `Alt l` | 포커스/탭 오른쪽 | 포커스나 탭을 오른쪽으로 이동 |
 
-### Quick Actions
-| Key | Action | Description |
+### 빠른 동작
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `Alt n` | New Pane | Create new pane |
-| `Alt f` | Float Toggle | Toggle floating panes |
-| `Alt +` | Resize Up | Increase pane size |
-| `Alt -` | Resize Down | Decrease pane size |
-| `Alt [` | Prev Layout | Previous swap layout |
-| `Alt ]` | Next Layout | Next swap layout |
+| `Alt n` | 새 창 | 새 창 생성 |
+| `Alt f` | 플로트 토글 | 플로팅 창 토글 |
+| `Alt +` | 크기 증가 | 창 크기 증가 |
+| `Alt -` | 크기 감소 | 창 크기 감소 |
+| `Alt [` | 이전 레이아웃 | 이전 스왑 레이아웃 |
+| `Alt ]` | 다음 레이아웃 | 다음 스왑 레이아웃 |
 
-### Tab Management
-| Key | Action | Description |
+### 탭 관리
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `Alt i` | Move Tab Left | Move current tab left |
-| `Alt o` | Move Tab Right | Move current tab right |
+| `Alt i` | 탭 왼쪽 이동 | 현재 탭을 왼쪽으로 이동 |
+| `Alt o` | 탭 오른쪽 이동 | 현재 탭을 오른쪽으로 이동 |
 
-### Group Management
-| Key | Action | Description |
+### 그룹 관리
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `Alt p` | Toggle Group | Toggle pane in group |
-| `Alt Shift p` | Mark Group | Toggle group marking |
+| `Alt p` | 그룹 토글 | 그룹 내 창 토글 |
+| `Alt Shift p` | 그룹 표시 | 그룹 표시 토글 |
 
-## Tmux Mode (Ctrl b)
+## Tmux 모드 (Ctrl b)
 
-For tmux users, familiar keybindings:
+Tmux 사용자를 위한 친숙한 키 바인딩:
 
-| Key | Action | Description |
+| 키 | 동작 | 설명 |
 |-----|--------|-------------|
-| `h/j/k/l` | Navigate | Vim-style navigation |
-| `arrows` | Navigate | Arrow key navigation |
-| `"` | Split Horizontal | Split pane horizontally |
-| `%` | Split Vertical | Split pane vertically |
-| `c` | New Tab | Create new tab |
-| `n` | Next Tab | Next tab |
-| `p` | Previous Tab | Previous tab |
-| `z` | Zoom | Toggle pane zoom |
-| `x` | Close | Close current pane |
-| `[` | Copy Mode | Enter scroll mode |
-| `space` | Next Layout | Cycle through layouts |
-| `,` | Rename Tab | Rename current tab |
-| `o` | Next Pane | Focus next pane |
+| `h/j/k/l` | 탐색 | Vim 스타일 탐색 |
+| `화살표` | 탐색 | 화살표 키 탐색 |
+| `"` | 가로 분할 | 창을 가로로 분할 |
+| `%` | 세로 분할 | 창을 세로로 분할 |
+| `c` | 새 탭 | 새 탭 생성 |
+| `n` | 다음 탭 | 다음 탭 |
+| `p` | 이전 탭 | 이전 탭 |
+| `z` | 확대/축소 | 창 확대/축소 토글 |
+| `x` | 닫기 | 현재 창 닫기 |
+| `[` | 복사 모드 | 스크롤 모드 진입 |
+| `space` | 다음 레이아웃 | 레이아웃 순환 |
+| `,` | 탭 이름 변경 | 현재 탭 이름 변경 |
+| `o` | 다음 창 | 다음 창으로 포커스 |
 
-## Tips & Tricks
+## 팁과 요령
 
-### Workflow Suggestions
-1. **Start with tabs**: Use `Ctrl t` then `n` to create tabs for different projects
-2. **Split within tabs**: Use `Ctrl p` then `d`/`r` to create panes within tabs  
-3. **Use floating panes**: `Alt f` for temporary overlays
-4. **Sync mode**: `Ctrl t` then `s` to send commands to all panes in a tab
-5. **Session management**: `Ctrl o` then `w` to switch between sessions
+### 워크플로우 제안
+1. **탭으로 시작**: `Ctrl t` 후 `n`을 사용하여 다른 프로젝트용 탭 생성
+2. **탭 내에서 분할**: `Ctrl p` 후 `d`/`r`을 사용하여 탭 내에서 창 생성  
+3. **플로팅 창 사용**: 임시 오버레이용으로 `Alt f` 사용
+4. **동기화 모드**: `Ctrl t` 후 `s`로 탭의 모든 창에 명령 전송
+5. **세션 관리**: `Ctrl o` 후 `w`로 세션 간 전환
 
-### Customization
-- Edit `config.kdl` to modify keybindings
-- Add themes and layouts in the respective sections
-- Plugin system allows extended functionality
+### 사용자 정의
+- 키 바인딩을 수정하려면 `config.kdl` 편집
+- 해당 섹션에 테마와 레이아웃 추가
+- 플러그인 시스템으로 확장 기능 허용
 
-### Performance
-- Clear defaults are enabled (`clear-defaults=true`)
-- Optimized for keyboard-driven workflow
-- Minimal mouse dependency for speed
+### 성능
+- 기본값 지우기 활성화 (`clear-defaults=true`)
+- 키보드 중심 워크플로우에 최적화
+- 속도를 위한 최소한의 마우스 의존성
 
-## Configuration File Structure
+## 설정 파일 구조
 
-The `config.kdl` file contains:
-- **keybinds**: Custom key mappings for all modes
-- **plugins**: Plugin definitions and aliases  
-- **theme**: Visual appearance settings
-- **options**: Behavior configuration
+`config.kdl` 파일 포함 내용:
+- **keybinds**: 모든 모드의 사용자 정의 키 매핑
+- **plugins**: 플러그인 정의 및 별칭  
+- **theme**: 시각적 모양 설정
+- **options**: 동작 설정
 
-## Troubleshooting
+## 문제 해결
 
-### Common Issues
-1. **Keys not working**: Check if you're in the right mode
-2. **Can't exit mode**: Try `Esc` or `Enter` to return to normal
-3. **Conflicts**: Some terminal emulators may capture certain key combinations
+### 일반적인 문제
+1. **키가 작동하지 않음**: 올바른 모드에 있는지 확인
+2. **모드를 종료할 수 없음**: `Esc` 또는 `Enter`로 일반 모드로 복귀 시도
+3. **충돌**: 일부 터미널 에뮬레이터는 특정 키 조합을 캡처할 수 있음
 
-### Mode Confusion
-- Use `Esc` or `Enter` to return to normal mode from most modes
-- `Ctrl g` locks/unlocks all keybindings
-- Status bar shows current mode
+### 모드 혼동
+- 대부분의 모드에서 `Esc` 또는 `Enter`를 사용하여 일반 모드로 복귀
+- `Ctrl g`로 모든 키 바인딩 잠금/잠금 해제
+- 상태 표시줄에 현재 모드 표시
 
 ---
 
-*This configuration optimizes Zellij for efficient terminal multiplexing with vim-like navigation and intuitive keybindings.*
+*이 설정은 vim과 유사한 탐색과 직관적인 키 바인딩으로 효율적인 터미널 다중화를 위해 Zellij를 최적화합니다.*
