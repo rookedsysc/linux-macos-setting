@@ -112,6 +112,15 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# path 
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# alias
+alias v=nvim
+alias vi=nvim
+alias vim=nvim
+alias lg=lazygit
+
 # terminal에서 option + 방향키 동작 안함
 # 참조 https://edykim.com/ko/post/setting-opt-direction-keys-when-using-zsh-in-iterm/
 bindkey -e
