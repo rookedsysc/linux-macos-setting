@@ -120,6 +120,7 @@ alias v=nvim
 alias vi=nvim
 alias vim=nvim
 alias lg=lazygit
+alias zj=zellij
 
 # terminal에서 option + 방향키 동작 안함
 # 참조 https://edykim.com/ko/post/setting-opt-direction-keys-when-using-zsh-in-iterm/
