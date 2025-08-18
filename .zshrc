@@ -112,8 +112,9 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# path 
+# path
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export NVM_DIR="$HOME/.nvm"
 
 # alias
 alias v=nvim
@@ -122,6 +123,36 @@ alias vim=nvim
 alias lg=lazygit
 alias zj=zellij
 
+# alias function 
+clip() {
+    local os_name=$(uname -s)
+    
+    if [[ "$os_name" == "Linux" ]]; then
+        # WSL 환경 확인 (Linux이지만 Windows 내부)
+        if [[ -f /proc/version ]] && grep -q microsoft /proc/version; then
+            cat | clip.exe
+        elif command -v wl-copy > /dev/null 2>&1; then
+            # Wayland 환경
+            cat | wl-copy
+        elif command -v xclip > /dev/null 2>&1; then
+            # X11 환경
+            cat | xclip -selection clipboard
+        else
+            echo "Error: neither 'xclip' nor 'wl-copy' is installed" >&2
+            return 1
+        fi
+    elif [[ "$os_name" == "Darwin" ]]; then
+        # macOS
+        cat | pbcopy
+    elif [[ "$os_name" =~ ^(MINGW|MSYS|CYGWIN) ]]; then
+        # Windows 환경 (Git Bash, MSYS2 등)
+        cat | clip.exe
+    else
+        echo "Unsupported OS: $os_name" >&2
+        return 1
+    fi
+}
+
 # terminal에서 option + 방향키 동작 안함
 # 참조 https://edykim.com/ko/post/setting-opt-direction-keys-when-using-zsh-in-iterm/
 bindkey -e
@@ -129,8 +160,20 @@ bindkey "[D" backward-word
 bindkey "[C" forward-word
 
 # 파이썬 설정
+source $HOME/.local/bin/env
 alias python=python3
 alias pip=pip3
 
 # Rust Cargo 환경 설정
 source "$HOME/.cargo/env"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# ENV
+export ENVIRONMENT="development" # labs
+
+
+. "$HOME/.local/bin/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
