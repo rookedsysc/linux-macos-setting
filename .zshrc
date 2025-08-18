@@ -121,6 +121,7 @@ alias v=nvim
 alias vi=nvim
 alias vim=nvim
 alias lg=lazygit
+alias ld=lazydocker
 alias zj=zellij
 
 # alias function 
