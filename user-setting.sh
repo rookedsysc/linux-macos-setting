@@ -4,15 +4,13 @@
 # Updates
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y install zsh
-sudo apt-get -y install python pip git
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+sudo apt-get -y install python pip
 pip install --upgrade pip
 sudo apt-get install -y net-tools
-sudo apt-get -y install wget curl 
 sudo apt-get -y install service
-sudo apt-get install -y git
-sudo apt-get install -y ruby
-# Cargo / Rust Install 
+brew install git wget curl zsh
+# Cargo / Rust Install
 curl https://sh.rustup.rs -sSf | sh
 
 # ssh setting
