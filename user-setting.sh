@@ -4,13 +4,15 @@
 # Updates
 sudo apt-get -y update
 sudo apt-get -y upgrade
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-sudo apt-get -y install python pip
+sudo apt-get -y install zsh
+sudo apt-get -y install python pip git
 pip install --upgrade pip
 sudo apt-get install -y net-tools
+sudo apt-get -y install wget curl 
 sudo apt-get -y install service
-brew install git wget curl zsh
-# Cargo / Rust Install
+sudo apt-get install -y git
+sudo apt-get install -y ruby
+# Cargo / Rust Install 
 curl https://sh.rustup.rs -sSf | sh
 
 # ssh setting
@@ -49,8 +51,6 @@ cargo install --locked zellij
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim
 sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
-brew install jesseduffield/lazydocker/lazydocker
-brew install font-hack-nerd-font
 
 # LazyGit
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
