@@ -1,4 +1,4 @@
-# /bin/bash
+#!/bin/bash
 # Ubuntu Setting for User ID using Homebrew
 
 # Install Homebrew dependencies first
@@ -12,7 +12,9 @@ sudo apt-get install -y build-essential procps curl file git
 # Add Homebrew to PATH
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zshrc
+# Load Homebrew in current session
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 
 # Install packages using Homebrew
 brew install zsh
@@ -30,18 +32,26 @@ sudo systemctl enable ssh
 sudo systemctl start ssh
 
 # ZSH Setting
-chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
+# Verify zsh installation before changing shell
+if command -v zsh >/dev/null 2>&1; then
+    sudo chsh -s $(which zsh) $USER
+else
+    echo "Error: zsh not found in PATH"
+    exit 1
+fi
 RUNZSH=no sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
-git clone https://github.com/rookedsysc/Linux_MacOS_Setting 
+# Clone configuration files
+if [ ! -d "./Linux_MacOS_Setting" ]; then
+    git clone https://github.com/rookedsysc/Linux_MacOS_Setting 
+fi
 cd ./Linux_MacOS_Setting
 cp .zshrc ~/.zshrc
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin"
 cp .vimrc ~/.vimrc
-source ~/.zshrc
+cd ~
 
 # Power Line Setting
 python3 -m pip install git+https://github.com/powerline/powerline
@@ -94,4 +104,4 @@ mkdir -p ~/.oh-my-zsh/themes/spaceship
 git clone https://github.com/spaceship-prompt/spaceship-prompt ~/.oh-my-zsh/themes/spaceship
 ln -sf ~/.oh-my-zsh/themes/spaceship/spaceship.zsh-theme ~/.oh-my-zsh/themes/spaceship.zsh-theme
 
-source ~/.zshrc
+echo "Note: Manual shell restart required after script completion"
