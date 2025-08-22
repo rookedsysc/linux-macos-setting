@@ -1,62 +1,68 @@
 # /bin/bash
-# Linux Setting for User ID
+# Ubuntu Setting for User ID using Homebrew
 
-# Updates
+# Install Homebrew dependencies first
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y install zsh
-sudo apt-get -y install python pip git
-pip install --upgrade pip
-sudo apt-get install -y net-tools
-sudo apt-get -y install wget curl 
-sudo apt-get -y install service
-sudo apt-get install -y git
-sudo apt-get install -y ruby
+sudo apt-get install -y build-essential procps curl file git
+
+# Install Homebrew on Linux
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Add Homebrew to PATH
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zshrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Install packages using Homebrew
+brew install zsh
+brew install python git
+python3 -m pip install --upgrade pip
+brew install wget curl 
+brew install ruby
 # Cargo / Rust Install 
-curl https://sh.rustup.rs -sSf | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source ~/.cargo/env
 
 # ssh setting
-sudo apt-get install -y openssh-server
+brew install openssh
 sudo systemctl enable ssh
 sudo systemctl start ssh
 
 # ZSH Setting
-chsh -s /bin/zsh
+chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
 RUNZSH=no sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install --all
 git clone https://github.com/rookedsysc/Linux_MacOS_Setting 
 cd ./Linux_MacOS_Setting
 cp .zshrc ~/.zshrc
-export PATH="$PATH:/usr/bin"
-export PATH="$PATH:/bin"
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin"
 cp .vimrc ~/.vimrc
 source ~/.zshrc
 
 # Power Line Setting
-sudo pip install git+git://github.com/Lokaltog/powerline
-wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
-wget https://github.com/Loakaltog/powerline/raw/develop/font/10-powerline-symbols.conf
-mv PowerlineSymbols.otf /usr/share/fonts
+python3 -m pip install git+https://github.com/powerline/powerline
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+sudo mkdir -p /usr/share/fonts
+sudo cp PowerlineSymbols.otf /usr/share/fonts/
 fc-cache -vf
-mv 10-powerline-symbols.conf /etc/fonts/conf.d
+sudo mkdir -p /etc/fonts/conf.d
+sudo cp 10-powerline-symbols.conf /etc/fonts/conf.d/
+rm -f PowerlineSymbols.otf 10-powerline-symbols.conf
 
 # Utils
 # Zellij
 cargo install --locked zellij
 
 # LazyVim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
-sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+brew install neovim
 
 # LazyGit
-LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
-curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-tar xf lazygit.tar.gz lazygit
-sudo install lazygit -D -t /usr/local/bin/
+brew install lazygit
 
 # Docker
 sudo apt-get -y install ca-certificates curl
@@ -65,7 +71,7 @@ sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyring
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" |
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" |\
   sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
 sudo apt-get -y update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
@@ -84,8 +90,8 @@ echo "[!] Power Line Setting"
 which powerline
 
 # ZSH Theme 
-mkdir ~/.oh-my-zsh/themes/spaceship
+mkdir -p ~/.oh-my-zsh/themes/spaceship
 git clone https://github.com/spaceship-prompt/spaceship-prompt ~/.oh-my-zsh/themes/spaceship
-ln -s ~/.oh-my-zsh/themes/spaceship/spaceship.zsh-theme ~/.oh-my-zsh/themes/spaceship.zsh-theme
+ln -sf ~/.oh-my-zsh/themes/spaceship/spaceship.zsh-theme ~/.oh-my-zsh/themes/spaceship.zsh-theme
 
 source ~/.zshrc
