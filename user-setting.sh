@@ -37,10 +37,10 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone https://github.com/rookedsysc/Linux_MacOS_Setting
 cd ./Linux_MacOS_Setting
 cp .zshrc ~/.zshrc
-export PATH="$PATH:/usr/bin"
-export PATH="$PATH:/bin"
 cp .vimrc ~/.vimrc
 source ~/.zshrc
+command -v zsh | sudo tee -a /etc/shells
+chsh -s $(which zsh)
 
 # Power Line Setting
 sudo pip install git+git://github.com/Lokaltog/powerline
