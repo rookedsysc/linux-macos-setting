@@ -4,12 +4,14 @@
 # Updates
 sudo apt-get -y update
 sudo apt-get -y upgrade
+sudo apt-get -y install build-essential
 sudo apt-get install -y net-tools
 sudo apt-get -y install service
 sudo apt-get install -y openssh-server
 sudo systemctl enable ssh
 sudo systemctl start ssh
 sudo apt-get -y install python pip
+
 pip install --upgrade pip
 
 # brew 설치
