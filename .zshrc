@@ -123,7 +123,6 @@ alias vim=nvim
 alias lg=lazygit
 alias ld=lazydocker
 alias z=zellij
-alias zl="zellij ls"
 alias za="zellij attach --create"
 alias zd="zellij delete-session --force"
 
