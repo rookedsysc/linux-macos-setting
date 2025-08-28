@@ -53,20 +53,28 @@ mv 10-powerline-symbols.conf /etc/fonts/conf.d
 # Utils
 # Zellij
 cargo install --locked zellij
-
 # LazyVim
 brew install nvim
 brew install jesseduffield/lazydocker/lazydocker
 brew install font-hack-nerd-font
-
-# LazyGit
+# LazyGit                                 #
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
-sudo install lazygit -D -t /usr/local/bin/
-
+sudo install lazygit -D -t /usr/local/bin/lazygit
+# HTOP
+brew install htop
 # Docker
-brew install docker
+if command -v apt-get >/dev/null 2>&1; then
+  sudo install -m 0755 -d /etc/apt/keyrings
+  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" |
+    sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+  sudo apt-get -y update
+  sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin || true
+fi
 
 # Setting Check
 echo ""
