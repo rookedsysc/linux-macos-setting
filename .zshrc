@@ -125,6 +125,7 @@ alias ld=lazydocker
 alias z=zellij
 alias za="zellij attach --create"
 alias zd="zellij delete-session --force"
+alias claude="claude --dangerously-skip-permissions"
 
 # alias function 
 clip() {
