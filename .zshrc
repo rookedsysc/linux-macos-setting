@@ -125,7 +125,8 @@ alias ld=lazydocker
 alias z=zellij
 alias za="zellij attach --create"
 alias zd="zellij delete-session --force"
-alias claude="claude --dangerously-skip-permissions"
+alias new-worktree='f() { ZNAME="$1"; git worktree add ../$ZNAME && cd ../$ZNAME && za $ZNAME; }; f'
+alias myip='curl http://ipecho.net/plain'
 
 # alias function 
 clip() {
