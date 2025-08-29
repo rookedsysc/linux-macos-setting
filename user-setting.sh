@@ -75,6 +75,8 @@ if command -v apt-get >/dev/null 2>&1; then
   sudo apt-get -y update
   sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin || true
 fi
+sudo usermod -aG docker $USER
+newgrp docker
 
 # Setting Check
 echo ""
