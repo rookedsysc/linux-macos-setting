@@ -149,6 +149,10 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+## uv
+source $HOME/.local/bin/env
+## Java - v 뒤에 숫자 입력해서 version 변경
+export JAVA_HOME=$(/usr/libexec/java_home -v21)
 
 
 # pnpm
@@ -158,3 +162,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+. "$HOME/.local/bin/env"
