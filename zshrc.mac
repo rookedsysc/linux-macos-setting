@@ -136,6 +136,11 @@ alias v=nvim
 alias vi=nvim
 alias vim=nvim
 alias lg=lazygit
+alias z=zellij
+alias za="zellij attach --create"
+alias zd="zellij delete-session --force"
+alias znw='f() { ZNAME="$1"; git worktree add ../$ZNAME && cd ../$ZNAME && za $ZNAME; }; f'
+alias myip='curl http://ipecho.net/plain'
 
 
 # dev dependency
